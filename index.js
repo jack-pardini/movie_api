@@ -27,7 +27,8 @@ let movies = [
     "Director": {
       "Name": "Ridley Scott",
       "Bio": "Sir Ridley Scott GBE is an English filmmaker. He is best known for directing films in the science fiction, crime and historical drama genres. His work is known for its atmospheric and highly concentrated visual style.",
-      "Birth": 1937
+      "Birth": 1937,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Action",
@@ -35,14 +36,16 @@ let movies = [
     },
     "Description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
     "ImageURL": "https://m.media-amazon.com/images/I/81QVTiMK1wL._SL1500_.jpg",
-    "Year": 2000
+    "Year": 2000,
+    "Featured": true
   },
   {
     "Title": "The Departed",
     "Director": {
       "Name": "Martin Scorsese",
       "Bio": "Martin Charles Scorsese is an American filmmaker. He emerged as one of the major figures of the New Hollywood era. He has received many accolades, including an Academy Award, four BAFTA Awards, three Emmy Awards, a Grammy Award, and three Golden Globe Awards.",
-      "Birth": 1942
+      "Birth": 1942,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Drama",
@@ -50,14 +53,16 @@ let movies = [
     },
     "Description": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.",
     "ImageURL": "https://m.media-amazon.com/images/I/71TO1MtPQkL._SL1500_.jpg",
-    "Year": 2006
+    "Year": 2006,
+    "Featured": true
   },
   {
     "Title": "Fight Club",
     "Director": {
       "Name": "David Fincher",
       "Bio": "David Andrew Leo Fincher is an American film director. His films, most of which are psychological thrillers, have collectively grossed over $2.1 billion worldwide and have received numerous accolades, including three nominations for the Academy Awards for Best Director.",
-      "Birth": 1962
+      "Birth": 1962,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Drama",
@@ -65,14 +70,16 @@ let movies = [
     },  
     "Description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
     "ImageURL": "https://m.media-amazon.com/images/I/31CauYmKHlL.jpg",
-    "Year": 1999
+    "Year": 1999,
+    "Featured": true
   },
   {
     "Title": "Goodfellas",
     "Director": {
       "Name": "Martin Scorsese",
       "Bio": "Martin Charles Scorsese is an American filmmaker. He emerged as one of the major figures of the New Hollywood era. He has received many accolades, including an Academy Award, four BAFTA Awards, three Emmy Awards, a Grammy Award, and three Golden Globe Awards.",
-      "Birth": 1942
+      "Birth": 1942,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Drama",
@@ -80,14 +87,16 @@ let movies = [
     },
     "Description": "The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.",
     "ImageURL": "https://m.media-amazon.com/images/I/81NuuGhiNmL._SL1500_.jpg",
-    "Year": 1990
+    "Year": 1990,
+    "Featured": true
   },
   {
     "Title": "In Bruges",
     "Director": {
       "Name": "Martin McDonagh",
       "Bio": "Martin Faranan McDonagh is a British-Irish playwright and filmmaker. He is known for his absurdist black humour which often challenges the modern theatre aesthetic.",
-      "Birth": 1970
+      "Birth": 1970,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Comedy",
@@ -95,14 +104,16 @@ let movies = [
     },
     "Description": "After a job gone wrong, hitman Ray and his partner await orders from their ruthless boss in Bruges, Belgium, the last place in the world Ray wants to be.",
     "ImageURL": "https://m.media-amazon.com/images/I/914V9NgA8FL._SL1500_.jpg",
-    "Year": 2008
+    "Year": 2008,
+    "Featured": true
   },
   {
     "Title": "Django Unchained",
     "Director": {
       "Name": "Quentin Tarantino",
       "Bio": "Quentin Jerome Tarantino is an American film director, screenwriter, and actor. His films are characterized by stylized violence, extended dialogue often with profanity, and references to popular culture.",
-      "Birth": 1963
+      "Birth": 1963,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Drama",
@@ -110,14 +121,16 @@ let movies = [
     },
     "Description": "With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.",
     "ImageURL": "https://m.media-amazon.com/images/I/81IVfnsVtIL._SL1500_.jpg",
-    "Year": 2012
+    "Year": 2012,
+    "Featured": true
   },
   {
     "Title": "The Lord of the Rings",
     "Director": {
       "Name": "Peter Jackson",
       "Bio": "Sir Peter Robert Jackson ONZ KNZM is a New Zealand film director, screenwriter and producer. He is best known as the director, writer and producer of the Lord of the Rings trilogy and the Hobbit trilogy, both of which are adapted from the novels of the same name by J. R. R. Tolkien.",
-      "Birth": 1961
+      "Birth": 1961,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Action",
@@ -125,14 +138,16 @@ let movies = [
     },
     "Description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
     "ImageURL": "https://m.media-amazon.com/images/I/61kTo1-zgcL._SL1000_.jpg",
-    "Year": 2001
+    "Year": 2001,
+    "Featured": true
   },
   {
     "Title": "Miracle",
     "Director": {
       "Name": "Gavin O'Connor",
       "Bio": "Gavin O'Connor is an American film director, screenwriter, producer, playwright, and actor. He is best known for directing the films Miracle, Warrior, The Accountant, and The Way Back.",
-      "Birth": 1963
+      "Birth": 1963,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Drama",
@@ -140,14 +155,16 @@ let movies = [
     },
     "Description": "The true story of Herb Brooks, the player-turned-coach who led the 1980 U.S. Olympic hockey team to victory over the seemingly invincible Soviet squad.",
     "ImageURL": "https://m.media-amazon.com/images/I/71PrNZ7sRAS._SL1500_.jpg",
-    "Year": 2004
+    "Year": 2004,
+    "Featured": true
   },
   {
     "Title": "Dune: Part Two",
     "Director": {
       "Name": "Denis Villeneuve",
       "Bio": "Denis Villeneuve OC CQ RCA is a Canadian filmmaker. He has received seven Canadian Screen Awards as well as nominations for three Academy Awards, five BAFTA Awards, and two Golden Globe Awards. Villeneuve's films have grossed over $1.8 billion worldwide.",
-      "Birth": 1967
+      "Birth": 1967,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Action",
@@ -155,14 +172,16 @@ let movies = [
     },
     "Description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
     "ImageURL": "https://m.media-amazon.com/images/I/61tJY4EWDpL._SL1500_.jpg",
-    "Year": 2024
+    "Year": 2024,
+    "Featured": true
   },
   {
     "Title": "Top Gun: Maverick",
     "Director": {
       "Name": "Joseph Kosinski",
       "Bio": "Joseph Kosinski is an American film director, best known for his computer graphics and computer-generated imagery work, and for his work in action films. He has directed the films Tron: Legacy, Oblivion, Only the Brave, Top Gun: Maverick and Spiderhead.",
-      "Birth": 1974
+      "Birth": 1974,
+      "Death": "N/A"
     },
     "Genre": {
       "Name": "Action",
@@ -170,7 +189,8 @@ let movies = [
     },
     "Description": "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it.",
     "ImageURL": "https://m.media-amazon.com/images/I/81aJwkgPAwL._SL1500_.jpg",
-    "Year": 2022
+    "Year": 2022,
+    "Featured": true
   }
 ]
 
@@ -304,11 +324,6 @@ app.delete('/users/:id', (req, res) => {
     res.status(400).send('no such user')
   }
 })
-
-
-
-
-
 
 // listen for requests
 app.listen(8080, () => {

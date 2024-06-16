@@ -1,12 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyFlix Application</title>
-</head>
-<body>
-    <h1>API Documentation</h1>
-    <p>This application provides access to information about different movies, directors, and genres. Users can sign up, update their personal information, and create a list of their favorite movies.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation</title>
+  </head>
+  <style>
+    *html {
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: transparent;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #b5b3b3;
+    }
+
+    #web-name {
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    div {
+      margin: 0 auto;
+      width: 80%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #Intro-text,
+    #Intro-text1 {
+      font-size: 1.2em;
+      line-height: 1.6;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: transparent;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      padding: 10px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    code {
+      display: block;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      gap: 10px;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/documentation.html">Documentation</a></li>
+        </ul>
+      </nav>
+    </header>
+   <section> <h1>API Documentation</h1></section>
+    <div>
+      <p id="Intro-text">
+        The web application will provide users with access to information about
+        different movies, directors, and genres. Users will be able to sign up,
+        update their personal information, and create a list of their favorite
+        movies.
+      </p>
+
+      <p id="Intro-text1">Here is the documentation for the Movie API:</p>
+
+      <h2>Endpoints</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Path</th>
+            <th>Description</th>
+            <th>Example Response</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td>/movies</td>
+            <td>Return a list of ALL movies to the user</td>
+            <td>
+              <code>
+                {
+                  "Title": "Gladiator",
+                  "Director": {
+                    "Name": "Ridley Scott",
+                    "Bio": "Sir Ridley Scott GBE is an English filmmaker. He is best known for directing films in the science fiction, crime and historical drama genres. His work is known for its atmospheric and highly concentrated visual style.",
+                    "Birth": 1937,
+                    "Death": "N/A"
+                  },
+                  "Genre": {
+                    "Name": "Action",
+                    "Description": "A film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases. Action films tend to feature a mostly resourceful hero struggling against incredible odds, which include life-threatening situations, a dangerous villain, or a pursuit which usually concludes in victory for the hero."
+                  },
+                  "Description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+                  "ImageURL": "https://m.media-amazon.com/images/I/81QVTiMK1wL._SL1500_.jpg",
+                  "Year": 2000,
+                  "Featured": true
+                },
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/movies/:movieTitle</td>
+            <td>Return data about a single movie by title to the user</td>
+            <td>
+              <code>
+                {
+                  "Title": "The Departed",
+                  "Director": {
+                    "Name": "Martin Scorsese",
+                    "Bio": "Martin Charles Scorsese is an American filmmaker. He emerged as one of the major figures of the New Hollywood era. He has received many accolades, including an Academy Award, four BAFTA Awards, three Emmy Awards, a Grammy Award, and three Golden Globe Awards.",
+                    "Birth": 1942,
+                    "Death": "N/A"
+                  },
+                  "Genre": {
+                    "Name": "Drama",
+                    "Description": "In film and television, drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+                  },
+                  "Description": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.",
+                  "ImageURL": "https://m.media-amazon.com/images/I/71TO1MtPQkL._SL1500_.jpg",
+                  "Year": 2006,
+                  "Featured": true
+                }
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/movies/genre/:genreName</td>
+            <td>Return data about a genre (description) by name/title</td>
+            <td>
+              <code>
+                {
+                  "Name": "Drama",
+                  "Description": "In film and television, drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+                }
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/movies/directors/:directorName</td>
+            <td>Return data about a director (bio, birth year, death year) by name</td>
+            <td>
+              <code>
+                {
+                  "Name": "Ridley Scott",
+                  "Bio": "Sir Ridley Scott GBE is an English filmmaker. He is best known for directing films in the science fiction, crime and historical drama genres. His work is known for its atmospheric and highly concentrated visual style.",
+                  "Birth": 1937,
+                  "Death": "N/A"
+                }
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/users</td>
+            <td>Return json data of users list.</td>
+            <td>
+              <code>
+                [{
+                  id: 1,
+                  name: "Kim",
+                  favoriteMovies: []
+                },
+                {
+                  id: 2,
+                  name: "Joe",
+                  favoriteMovies: []
+                }]       
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/users</td>
+            <td>Allow new users to register</td>
+            <td>
+              <code>
+                <code>
+                  {
+                    id: 3,
+                    name: "Jim",
+                    favoriteMovies: []
+                  }
+                </code>
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>/users/:id</td>
+            <td>Allow users to update their user info</td>
+            <td>
+              <code> 
+                {
+                  "name": "Jim D"
+                } </code>
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/users/:id/:movieTitle</td>
+            <td>Allow users to add a movie to their list of favorites</td>
+            <td>
+              <code>
+                {
+                  id: 1,
+                  name: "Kim",
+                  favoriteMovies: ["Gladiator"]
+                },
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>/users/:id</td>
+            <td>Delete a user</td>
+            <td>
+              <code>
+                "user 1 has been deleted"
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>/users/:id/movies/:movieTitle</td>
+            <td>Allow users to remove a movie from their list of favorites</td>
+            <td>
+              <code>
+                  {
+                    id: 1, name: "Kim", favoriteMovies: ["Gladiator"]
+                  },
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>
