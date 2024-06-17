@@ -54,7 +54,7 @@ let movies = [
     "Description": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.",
     "ImageURL": "https://m.media-amazon.com/images/I/71TO1MtPQkL._SL1500_.jpg",
     "Year": 2006,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "Fight Club",
@@ -71,7 +71,7 @@ let movies = [
     "Description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
     "ImageURL": "https://m.media-amazon.com/images/I/31CauYmKHlL.jpg",
     "Year": 1999,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "Goodfellas",
@@ -88,7 +88,7 @@ let movies = [
     "Description": "The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.",
     "ImageURL": "https://m.media-amazon.com/images/I/81NuuGhiNmL._SL1500_.jpg",
     "Year": 1990,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "In Bruges",
@@ -122,7 +122,7 @@ let movies = [
     "Description": "With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.",
     "ImageURL": "https://m.media-amazon.com/images/I/81IVfnsVtIL._SL1500_.jpg",
     "Year": 2012,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "The Lord of the Rings",
@@ -139,7 +139,7 @@ let movies = [
     "Description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
     "ImageURL": "https://m.media-amazon.com/images/I/61kTo1-zgcL._SL1000_.jpg",
     "Year": 2001,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "Miracle",
@@ -156,7 +156,7 @@ let movies = [
     "Description": "The true story of Herb Brooks, the player-turned-coach who led the 1980 U.S. Olympic hockey team to victory over the seemingly invincible Soviet squad.",
     "ImageURL": "https://m.media-amazon.com/images/I/71PrNZ7sRAS._SL1500_.jpg",
     "Year": 2004,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "Dune: Part Two",
@@ -173,7 +173,7 @@ let movies = [
     "Description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
     "ImageURL": "https://m.media-amazon.com/images/I/61tJY4EWDpL._SL1500_.jpg",
     "Year": 2024,
-    "Featured": true
+    "Featured": false
   },
   {
     "Title": "Top Gun: Maverick",
