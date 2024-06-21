@@ -100,7 +100,7 @@ let movies = [
     },
     "Genre": {
       "Name": "Comedy",
-      "Description": "A comedy film is a film genre that emphasizes humor. These films are designed to amuse audiences and make them laugh.[1] Films in this genre typically have a happy ending, with dark comedy being an exception to this rule"
+      "Description": "A comedy film is a film genre that emphasizes humor. These films are designed to amuse audiences and make them laugh. Films in this genre typically have a happy ending, with dark comedy being an exception to this rule."
     },
     "Description": "After a job gone wrong, hitman Ray and his partner await orders from their ruthless boss in Bruges, Belgium, the last place in the world Ray wants to be.",
     "ImageURL": "https://m.media-amazon.com/images/I/914V9NgA8FL._SL1500_.jpg",
