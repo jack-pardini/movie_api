@@ -210,7 +210,7 @@
             <td>Return json data of users list.</td>
             <td>
               <code>
-                [{
+                {
                   id: 1,
                   username: "KimJones123",
                   password: "password123",
@@ -225,17 +225,17 @@
                   email: "joe.johnson@example.com",
                   birthday: "04/15/96",
                   favoriteMovies: []
-                }]       
+                }       
               </code>
             </td>
           </tr>
           <tr>
             <td>GET</td>
-            <td>/users/:username</td>
+            <td>/users/:Username</td>
             <td>Return json data of specific user.</td>
             <td>
               <code>
-                [{
+                {
                   id: 1,
                   username: "KimJones123",
                   password: "password123",
@@ -255,7 +255,10 @@
                 <code>
                   {
                     id: 3,
-                    name: "Jim",
+                    username: "JimJames",
+                    password: "password766",
+                    email: "jim.james@example.com",
+                    birthday: "12/12/98",
                     favoriteMovies: []
                   }
                 </code>
@@ -264,12 +267,17 @@
           </tr>
           <tr>
             <td>PUT</td>
-            <td>/users/:id</td>
+            <td>/users/:Username</td>
             <td>Allow users to update their user info</td>
             <td>
               <code> 
                 {
-                  "name": "Jim D"
+                  id: 3,
+                  username: "JimDJames",
+                  password: "password766",
+                  email: "jim.james@example.com",
+                  birthday: "12/12/98",
+                  favoriteMovies: []
                 } </code>
             </td>
           </tr>
@@ -281,7 +289,10 @@
               <code>
                 {
                   id: 1,
-                  name: "Kim",
+                  username: "KimJones123",
+                  password: "password123",
+                  email: "kim.jones@example.com",
+                  birthday: "02/12/86",
                   favoriteMovies: ["Gladiator"]
                 },
               </code>
@@ -299,12 +310,17 @@
           </tr>
           <tr>
             <td>DELETE</td>
-            <td>/users/:id/movies/:movieTitle</td>
+            <td>/users/:Username/movies/:MovieID</td>
             <td>Allow users to remove a movie from their list of favorites</td>
             <td>
               <code>
                   {
-                    id: 1, name: "Kim", favoriteMovies: ["Gladiator"]
+                    id: 1,
+                    username: "KimJones123",
+                    password: "password123",
+                    email: "kim.jones@example.com",
+                    birthday: "02/12/86",
+                    favoriteMovies: []
                   },
               </code>
             </td>
