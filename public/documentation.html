@@ -212,14 +212,37 @@
               <code>
                 [{
                   id: 1,
-                  name: "Kim",
+                  username: "KimJones123",
+                  password: "password123",
+                  email: "kim.jones@example.com",
+                  birthday: "02/12/86",
                   favoriteMovies: []
                 },
                 {
                   id: 2,
-                  name: "Joe",
+                  username: "JoeJohnson456",
+                  password: "password456",
+                  email: "joe.johnson@example.com",
+                  birthday: "04/15/96",
                   favoriteMovies: []
                 }]       
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/users/:username</td>
+            <td>Return json data of specific user.</td>
+            <td>
+              <code>
+                [{
+                  id: 1,
+                  username: "KimJones123",
+                  password: "password123",
+                  email: "kim.jones@example.com",
+                  birthday: "02/12/86",
+                  favoriteMovies: []
+                },       
               </code>
             </td>
           </tr>
@@ -252,7 +275,7 @@
           </tr>
           <tr>
             <td>POST</td>
-            <td>/users/:id/:movieTitle</td>
+            <td>/users/:Username/movies/:MovieID</td>
             <td>Allow users to add a movie to their list of favorites</td>
             <td>
               <code>
@@ -266,7 +289,7 @@
           </tr>
           <tr>
             <td>DELETE</td>
-            <td>/users/:id</td>
+            <td>/users/:Username</td>
             <td>Delete a user</td>
             <td>
               <code>
