@@ -222,9 +222,9 @@ app.use(express.static('public'));
 app.use(morgan('common'));
 
 // GET requests
-app.get('/movies', (req, res) => {
-  res.json(movies);
-});
+// app.get('/movies', (req, res) => {
+//   res.json(movies);
+// });
 
 app.get('/', (req, res) => {
   res.send('Welcome to my App!');
@@ -240,7 +240,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
-// Create
+// CREATE
 // app.post('/users', (req, res) => {
 //   const newUser = req.body;
   
@@ -301,25 +301,10 @@ app.post('/users', async (req, res) => {
     });
 });
 
-// Add a movie to a user's list of favorites
-app.post('/users/:Username/movies/:MovieID', async (req, res) => {
-  await Users.findOneAndUpdate({Username: req.params.Username}, {
-    $push: {favoriteMovies: req.params.MovieID}
-  },
-  {new: true}) // This line makes sure that the updated document is returned
-  .then((updatedUser) => {
-    res.json(updatedUser);
-  })
-  .catch((err) => {
-    console.error(err);
-    res.status(500).send('Error ' + err);
-  });
-});
-
-// Read
-app.get('/movies', (req, res) => {
-  res.status(200).json(movies);
-})
+// READ
+// app.get('/movies', (req, res) => {
+//   res.status(200).json(movies);
+// })
 
 app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Movies.find()
@@ -332,7 +317,7 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), async (req,
     });
 });
 
-app.get('/movies/:title', (req, res) => {
+app.get('/movies/:title', passport.authenticate('jwt', {session: false}), (req, res) => {
   const { title } = req.params;
   const movie = movies.find( movie => movie.Title === title );
 
@@ -343,7 +328,7 @@ app.get('/movies/:title', (req, res) => {
   }
 })
 
-app.get('/movies/genre/:genreName', (req, res) => {
+app.get('/movies/genre/:genreName', passport.authenticate('jwt', {session: false}), async (req, res) => {
   const { genreName } = req.params;
   const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
 
@@ -354,7 +339,7 @@ app.get('/movies/genre/:genreName', (req, res) => {
   }
 })
 
-app.get('/movies/directors/:directorName', (req, res) => {
+app.get('/movies/directors/:directorName', passport.authenticate('jwt', {session: false}), (req, res) => {
   const { directorName } = req.params;
   const director = movies.find( movie => movie.Director.Name === directorName ).Director;
 
@@ -366,7 +351,7 @@ app.get('/movies/directors/:directorName', (req, res) => {
 })
 
 // Get all users
-app.get('/users', async (req, res) => {
+app.get('/users', passport.authenticate('jwt', {session: false}), async (req, res) => {
   await Users.find()
     .then((users) => {
       res.status(201).json(users);
@@ -378,7 +363,7 @@ app.get('/users', async (req, res) => {
 });
 
 // Get a user by username
-app.get('/users/:Username', async (req, res) => {
+app.get('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
   await Users.findOne({Username: req.params.Username})
     .then((user) => {
       res.json(user);
@@ -389,7 +374,7 @@ app.get('/users/:Username', async (req, res) => {
     });
 });
 
-// Update
+// UPDATE
 // app.put('/users/:id', (req, res) => {
 //   const { id } = req.params;
 //   const updatedUser = req.body;
@@ -412,7 +397,7 @@ app.get('/users/:Username', async (req, res) => {
   Email: String, (required)
   Birthday: Date
 }*/
-app.put('/users/:Username', async (req, res) => {
+app.put('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
   await Users.findOneAndUpdate({Username: req.params.Username}, 
     {
       $set: {
@@ -432,6 +417,21 @@ app.put('/users/:Username', async (req, res) => {
     })
 });
 
+// Add a movie to a user's list of favorites
+app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
+  await Users.findOneAndUpdate({Username: req.params.Username}, {
+    $push: {favoriteMovies: req.params.MovieID}
+  },
+  {new: true}) // This line makes sure that the updated document is returned
+  .then((updatedUser) => {
+    res.json(updatedUser);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send('Error ' + err);
+  });
+});
+
 // Delete
 // app.delete('/users/:id/:movieTitle', (req, res) => {
 //   const { id, movieTitle } = req.params;
@@ -447,7 +447,7 @@ app.put('/users/:Username', async (req, res) => {
 // })
 
 // Delete a movie from a user's list of favorites
-app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
+app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
   await Users.findOneAndUpdate({Username: req.params.Username}, {
     $pull: {favoriteMovies: req.params.MovieID}
   },
@@ -475,7 +475,7 @@ app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
 // })
 
 // Delete a user by username
-app.delete('/users/:Username', async (req, res) => {
+app.delete('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
   await Users.findOneAndDelete({Username: req.params.Username})
     .then((user) => {
       if (!user) {
