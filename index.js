@@ -17,9 +17,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-let auth = require('./auth')(app);
-const passport = require('passport');
-require('./passport');
+  let auth = require('./auth')(app);
+  const passport = require('passport');
+  require('./passport');
 
 // Users
 let users = [
