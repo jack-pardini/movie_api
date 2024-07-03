@@ -15,6 +15,11 @@ const uuid = require('uuid');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
 
 // Users
 let users = [
@@ -315,6 +320,17 @@ app.post('/users/:Username/movies/:MovieID', async (req, res) => {
 app.get('/movies', (req, res) => {
   res.status(200).json(movies);
 })
+
+app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  await Movies.find()
+    .then((movies) => {
+      res.status(201).json(movies);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
+    });
+});
 
 app.get('/movies/:title', (req, res) => {
   const { title } = req.params;
