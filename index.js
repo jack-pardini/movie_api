@@ -11,6 +11,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
 const uuid = require('uuid');
+const { check, validationResult } = require('express-validator');
+
+// Not sure if this is needed here
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -57,24 +61,26 @@ app.use((err, req, res, next) => {
 });
 
 // CREATE
+// Create a new user
 app.post('/users', async (req, res) => {
-  await Users.findOne({Username: req.body.Username})
+  let hashedPassword = Users.hashPassword(req.body.Password);
+  await Users.findOne({Username: req.body.Username}) // Search to see if a user woith the requested username already exists 
     .then((user) => {
-      if (user) {
+      if (user) { //If the user is found, send a response that it already exists
         return res.status(400).send(req.body.Username + 'already exists');
       } else {
         Users
           .create({
             Username: req.body.Username,
-            Password: req.body.Password,
+            Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday
           })
           .then((user) => {res.status(201).json(user)})
-        .catch((error) => {
-          console.error(error);
-          res.status(500).send('Error: ' + error);
-        })  
+          .catch((error) => {
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+          })  
       }
     })
     .catch((error) => {
@@ -84,6 +90,7 @@ app.post('/users', async (req, res) => {
 });
 
 // READ
+// Get all movies
 app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Movies.find()
     .then((movies) => {
@@ -95,6 +102,7 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), async (req,
     });
 });
 
+// Get movie by title
 app.get('/movies/:title', passport.authenticate('jwt', {session: false}), async (req, res) => {
   const title = req.params.title;
   const movie = await Movies.findOne({ Title: title });
@@ -104,9 +112,9 @@ app.get('/movies/:title', passport.authenticate('jwt', {session: false}), async 
   } else {
       res.status(404).send('Movie not found');
   }
+});
 
-})
-
+// Get genre by name
 app.get('/movies/genre/:genreName', passport.authenticate('jwt', {session: false}), async (req, res) => {
   try {
     const genreName = req.params.genreName;
@@ -121,9 +129,9 @@ app.get('/movies/genre/:genreName', passport.authenticate('jwt', {session: false
     console.error(err);
     res.status(500).send('Error: ' + err);
 }
+});
 
-})
-
+// Get director by name
 app.get('/movies/directors/:directorName', passport.authenticate('jwt', {session: false}), async (req, res) => {
   try {
     const directorName = req.params.directorName;
@@ -138,7 +146,7 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', {session
     console.error(err);
     res.status(500).send('Error: ' + err);
   }
-})
+});
 
 // Get all users
 app.get('/users', passport.authenticate('jwt', {session: false}), async (req, res) => {
@@ -165,6 +173,7 @@ app.get('/users/:Username', passport.authenticate('jwt', {session: false}), asyn
 });
 
 // UPDATE
+// Update username
 app.put('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
   // CONDITION TO CHECK ADDED HERE
   if (req.user.Username !== req.params.Username){
@@ -205,7 +214,7 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {sessi
   });
 });
 
-// Delete
+// DELETE
 // Delete a movie from a user's list of favorites
 app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
   await Users.findOneAndUpdate({Username: req.params.Username}, {
