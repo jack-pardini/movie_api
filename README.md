@@ -1,5 +1,6 @@
 # movie_api
- 
+MyFlix
+```
 MyFlix is a web application built using JavaScript library React. This is a movie app for users to find movies and add them to a list of favorites, and due to the use of React, the user interface is smooth, providing a user-friendly experience. The app showcases movies, including their description, directors information, release date, genre, and many other details.
 
 
@@ -13,7 +14,7 @@ A user can add a movie to a list of favorite movies to be accessed later. To do 
 
 
 
-Tech Stack
+Tech Stack:
 JavaScript
 React
 Frontend-tools: React-Query, TanStack-Query, React Router Dom, Sass
