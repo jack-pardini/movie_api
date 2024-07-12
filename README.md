@@ -5,10 +5,14 @@ MyFlix is a web application built using JavaScript library React. This is a movi
 
 
 ## Features
-**Feature 1: Seach Movie**
+
+**Feature 1: Create an Account**
+New users can create an account and access the app, including their favorite movies, once logged in.
+
+**Feature 2: Seach Movie**
 Search a movie by entering the movie name and clicking the search button. It will show the list of movies based on your search. If you click on a movie, you will see all the associated information about the movie.
 
-**Feature 2: Favorite Movies**
+**Feature 3: Favorite Movies**
 A user can add a movie to a list of favorite movies to be accessed later. To do so, select a movie then click on it. A Movie page will open, showing all the details about the movie. At the bottom you will find an 'Add Favorite' button. A pop up will show that your movies has been saved to My Favorites.
 
 
