@@ -14,8 +14,6 @@ const app = express();
 const uuid = require('uuid');
 const { check, validationResult } = require('express-validator');
 
-// Not sure if this is needed here
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -24,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const cors = require('cors');
 app.use(cors());
 
-// Replacement for app.use(cors()); when you only want to allow requests from specific origins
+// Replacement for app.use(cors()); when you only want to allow requests from specific origins - for testing
 // let allowedOrigins = ['http://localhost8080', 'http://testsite.com'];
 
 // app.use(cors({
