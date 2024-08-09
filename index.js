@@ -175,24 +175,14 @@ app.get('/users', passport.authenticate('jwt', {session: false}), async (req, re
 
 // Get a user by username
 app.get('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
-  // await Users.findOne({Username: req.params.Username})
-  //   .then((user) => {
-  //     res.json(user);
-  //   })
-  //   .catch((err) => {
-  //     console.error(err);
-  //     res.status(500).send('Error: ' + err);
-  //   });
-  try {
-    const user = await user.findOne({ Username: req.params.Username });
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ message: 'Server error' });
-  }
-
+  await Users.findOne({Username: req.params.Username})
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 // UPDATE
