@@ -187,7 +187,7 @@ app.get('/users/:Username', passport.authenticate('jwt', {session: false}), asyn
 
 // UPDATE
 // Update username
-app.put('/users/:Username', passport.authenticate('jwt', {session: false}), 
+app.patch('/users/:Username', passport.authenticate('jwt', {session: false}), 
   [
     check('Username', 'Username is required').isLength({min: 5}),
     check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
