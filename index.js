@@ -215,14 +215,14 @@ app.put('/users/:Username', passport.authenticate('jwt', {session: false}),
   };
 
   if (req.body.Password) {
-    updatedData.Password = Users.hashPassword(req.body.Password);
+    updatedData.Password = await Users.hashPassword(req.body.Password);
   }
   
-  await Users.findOneAndUpdate({Username: req.params.Username}, 
-    {
-      $set: updatedData,
-    },
-    {new: true}) // This line makes sure that the updated document is returned
+  await Users.findOneAndUpdate(
+    { Username: req.params.Username }, 
+    { $set: updatedData },
+    { new: true } // This line makes sure that the updated document is returned
+    ) 
     .then((updatedUser) => {
       res.json(updatedUser);
     })
