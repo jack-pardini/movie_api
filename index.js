@@ -23,7 +23,7 @@ const cors = require('cors');
 app.use(cors());
 
 // Replacement for app.use(cors()); when you only want to allow requests from specific origins - for testing
-// let allowedOrigins = ['http://localhost8080', 'http://testsite.com', '*'];
+// let allowedOrigins = ['http://localhost8080', 'http://testsite.com', 'http://myflix-movies-jp.netlify.app' '*'];
 
 // app.use(cors({
 //   origin: (origin, callback) => {
