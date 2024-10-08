@@ -1,25 +1,32 @@
-# MyFlix movie_api
-```
-MyFlix is a web application built using JavaScript library React. This is a movie app for users to find movies and add them to a list of favorites, and due to the use of React, the user interface is smooth, providing a user-friendly experience. The app showcases movies, including their description, directors information, release date, genre, and many other details.
-```
+# MyFlix: Server-Side Development
 
+# Overview
+This project focuses on building the backend for a movie-based web application, myFlix. It serves as a foundation for a full-stack JavaScript project using the MERN stack (MongoDB, Express, React, Node.js).
 
-## Features
+# Project Goals
+- Create a RESTful API to handle movie-related data.
+- Implement user authentication and authorization.
+- Design and implement a MongoDB database for data storage.
+- Adhere to best practices for data security and validation.
 
-**Feature 1: Create an Account**
-New users can create an account and access the app, including their favorite movies, once logged in.
+# Key Features
+- Movie Management: Retrieve movie lists, details, genres, and directors.
+- User Management: Allow user registration, profile updates, and favorite movie management.
+- Authentication: Implement secure user authentication and authorization.
 
-**Feature 2: Seach Movie**
-Search a movie by entering the movie name and clicking the search button. It will show the list of movies based on your search. If you click on a movie, you will see all the associated information about the movie.
+# Technical Requirements
+- Node.js and Express: Build the web server and API.
+- MongoDB and Mongoose: Create and manage the database.
+- RESTful API: Design and implement API endpoints for CRUD operations.
+- Authentication: Utilize HTTP and JWT-based authentication.
+- Data Validation: Implement robust data validation mechanisms.
+- Deployment: Deploy the API to Heroku and GitHub.
 
-**Feature 3: Favorite Movies**
-A user can add a movie to a list of favorite movies to be accessed later. To do so, select a movie then click on it. A Movie page will open, showing all the details about the movie. At the bottom you will find an 'Add Favorite' button. A pop up will show that your movies has been saved to My Favorites.
+# Project Structure
+The project follows a standard Node.js project structure with the following key directories and files:
 
-
-
-## Tech Stack:
-- JavaScript
-- React
-- Frontend-tools: React-Query, TanStack-Query, React, Router Dom, Sass
-- Backend & API: TMDB.
-
+- models: Contains Mongoose schemas for data modeling.
+- routes: Defines API endpoints and request handlers.
+- controllers: Handles business logic and data interactions.
+- config: Stores configuration settings.
+- tests: Includes test cases for API endpoints and models.
